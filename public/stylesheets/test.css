@@ -1,0 +1,45 @@
+.gallery > div {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 50%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.gallery > div:before,
+.gallery > div:after {
+  content: '';
+  display: table;
+}
+.gallery > div:after {
+  clear: both;
+}
+#announcement_form {
+  *zoom: 1;
+}
+#announcement_form:before,
+#announcement_form:after {
+  content: '';
+  display: table;
+}
+#announcement_form:after {
+  clear: both;
+}
+#announcement_form > textarea {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 33.33333333333333%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+#announcement_form > textarea:before,
+#announcement_form > textarea:after {
+  content: '';
+  display: table;
+}
+#announcement_form > textarea:after {
+  clear: both;
+}

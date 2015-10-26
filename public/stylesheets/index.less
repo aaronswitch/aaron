@@ -1,0 +1,384 @@
+/*
+ * Clean this!
+ */
+@round: 10px;
+@bgcolor: white;
+@fgcolor: black;
+@marginal: 0%;
+@ncolor: #e1eeff;
+//@ncolor: #ddd;
+@box-height: 50px;
+@bordercol: #3a87ad;
+
+html, body {
+  height: 100%;
+  color: @fgcolor;
+  background: @bgcolor;
+  // font-family: 'Roboto slab', serif;
+  font-family: 'roboto_slabregular';
+  //padding-top: 50px !important;
+
+  //background: url('../images/lines.jpg') repeat-y center center fixed; 
+  background-size:cover;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#exit {
+  font-size: 1.7em;
+}
+
+#top {
+  display: none;
+}
+
+#board {
+  position: fixed;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  right: 0;
+}
+
+.pull-center > .nav {
+  float:none;
+  display:inline-block;
+  *display: inline; *zoom: 1;
+  height: 32px;
+}
+
+.leftspan {
+  padding-right:10px;
+  border-right: 1px solid #ccc;
+}
+
+.row-fluid .rightspan {
+  margin-left: -0.138297872340425%;
+  *margin-left: -0.13191489361702%;
+  padding-left:10px;
+  border-left: 1px solid #ccc;
+}
+
+.row-fluid .rightspan:first-child {
+  margin-left: -0.11063829787234%;
+  *margin-left: -0.104255319148938%;
+}
+
+.statement_item:after {
+  content: '[-]';
+}
+
+.comment {
+  font-size: 0.8em !important;
+  line-height: 20px;
+}
+
+.btn {
+  .round(0);
+  color: black;
+  background: white !important;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  line-height: normal;
+  outline: medium none;
+  padding: 4px 6px;
+  text-decoration: none;
+  border-color: #ccc !important;
+}
+
+input, textarea, select {
+  .round(0);
+}
+
+.caret.caret-reversed {
+  border-top-width: 0;
+  border-bottom: 4px solid #000000;
+}
+
+a, .votable {
+  color: darken(@bordercol, 10%);
+}
+
+.vote {
+  background: url('../images/encircle.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.votable:hover {
+  cursor: url(pencil.cur), progress !important;
+}
+
+.borderless {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.graph-small {
+  height: 96px;
+  width: 96px;
+}
+
+.graph-medium {
+  height: 256px;
+  width: 256px;
+}
+
+blockquote {
+  // font-family: 'Patrick Hand', cursive;
+  font-family: 'patrick_handregular', cursive;
+  word-wrap: break-word;
+}
+
+.nav-pills, h1, h2, h3, h4 {
+  // font-family: 'Roboto condensed', sans-serif;
+  font-family: 'roboto_condensedbold';
+  text-shadow: 1px 1px 2px #999;
+}
+
+.seetru {
+  opacity: 0.8 !important;
+}
+
+.bordered {
+  border: 1px ridge #aaa;
+}
+
+.discuss-frame {
+  margin-top: 15px !important;
+  margin-bottom: 25px !important;
+}
+
+.discuss {
+  font-size: 12px;
+  margin: 2px !important;
+}
+
+.date-mini {
+  font-size: 10px;
+  font-style: italic;
+}
+
+.date-micro {
+  font-size: 8px;
+  font-style: italic;
+}
+
+.well {
+  background: @bgcolor;
+  //.round(0);
+}
+
+.well-decor {
+  margin-bottom: 0 !important;
+}
+
+.nav-list {
+  box-shadow: 1px 1px 1px #777;
+}
+
+.navbar-fixed-top {
+}
+
+.navbar .brand, .navbar .nav > li > a {
+  color: darken(@bordercol, 25%) !important;
+  text-shadow: 1px 1px 1px lighten(@bordercol, 30%);
+}
+
+#toptop > .navbar-inner {
+  border: 0 !important;
+  background: white !important;
+  box-shadow: 0 0 0 white !important;
+}
+
+.bleach {
+  color: #fff !important;
+  text-shadow: 1px 1px 1px black !important;
+}
+
+.bleachless {
+  color: #3A87AD;
+  text-shadow: 1px 1px 1px black;
+  font-size: 1.1em;
+}
+
+.well-mini {
+  padding: 4px;
+}
+
+.margins (@top: @marginal, @bottom: @marginal) {
+  margin-top: @top !important;
+  margin-bottom: @bottom !important;
+}
+
+.margins {
+  .margins(10px, 10px);
+}
+
+.margin-header {
+  margin-bottom: 20px;
+}
+
+.round(@radius: @round) {
+  -webkit-border-radius: @radius !important;
+  -moz-border-radius: @radius !important;
+  border-radius: @radius !important;
+}
+
+.shadow (@x: 1px, @y: 1px, @z: 2px, @col: black){
+  -moz-box-shadow: @x @y @z @col;
+  -webkit-box-shadow: @x @y @z @col;
+  box-shadow: @x @y @z @col;
+}
+
+.shadow {
+  .shadow(1px, 1px, 2px, black);
+}
+
+.accordion-group {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  //.round(0);
+  margin: 0;
+}
+
+.cuff {
+  .round(0);
+  //border: 2px ridge lighten(@ncolor, 60%);
+  //.shadow(1px, 1px, 1px, lighten(black, 50%));
+  padding: 5px !important;
+}
+
+.cufflink {
+  .cuff;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  background: @bgcolor;
+  color: #3a87ad;
+}
+
+#content {
+  background: url('../images/paper.png');
+  background-repeat: no-repeat;
+  background-color: white;
+  border: 0;
+  opacity: 0.9;
+  box-shadow: none !important;
+  position: relative;
+  z-index: 1001;
+}
+
+.nav-pills > .active > a {
+  background-color: #3a87ad !important;
+  text-shadow: 1px 1px 2px #222;
+}
+
+.btn-test {
+  .cufflink;
+  .round(10px);
+  .shadow(1px, 1px, 0, @fgcolor);
+  color: black;
+  padding: 2px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+#footer {
+  position: relative;
+  bottom: 0;
+  margin-top: 5%;
+}
+
+#bar {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+#middle {
+  text-align: auto;
+}
+
+.container .navbar .container {
+  width: auto;
+}
+
+hr {
+  margin-top: 0 !important;
+}
+
+.accordion {
+  padding: 5px !important;
+}
+
+.accordion-ops {
+  font-size: 20px !important;
+}
+
+.accordion-body.in {
+  overflow:visible;
+  margin-bottom: 5px;
+}
+
+.collapse { transition: height 0.01s; }
+
+#main {
+  .round(0) !important;
+}
+
+.main-nav {
+  margin-bottom: 0 !important;
+}
+
+.main-nav-pills > li {
+  float: none;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+.main-nav-pills > .active > a {
+  .shadow(1px, 1px, 0, lighten(black, 33%));
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active, .nav-tabs > .active > a {
+  border: 0px solid white !important;
+}
+
+.nav-center > li {
+  float: none;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+.nav-center {
+  text-align: center;
+}
+
+.lrmargins {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.marginals {
+  margin: 10px;
+}
+
+.smargin {
+  margin-bottom: 10px;
+}
+
+.margin {
+  margin-bottom: 40px;
+}
+
+.margin-x {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.board { 
+  position: relative;
+}

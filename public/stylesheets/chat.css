@@ -1,0 +1,32 @@
+.chat_message > h1, h2, h3, h4, h5, h6 {
+  margin: 5px 0px;
+}
+
+.chat_message > .chat {
+  //background: #eee;
+  border: 1px dotted #eee;
+
+  position: relative;
+  // padding: 15px 30px;
+  padding: 5px 15px;
+  margin: 0px;
+  color: #000;
+  border-radius: 20px;
+}
+
+.chat_message > .chat:after {
+  border-color: transparent #eee;
+
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 15px;
+  border-width: 0px 10px 20px 0px;
+  border-style: solid;
+  display: block;
+  width: 0px;
+}
+
+.chat_message > p {
+  margin-left: 35px;
+}
