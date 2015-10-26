@@ -1,0 +1,152 @@
+{
+  "routes": {
+    "POST /register": {
+      "controller": "register",
+      "action": "new"
+    },
+    "POST /invite": {
+      "controller": "identities",
+      "action": "invite"
+    },
+    "POST /verify": {
+      "controller": "identities",
+      "action": "verification"
+    },
+    "GET /verify/:token": {
+      "controller": "identities",
+      "action": "verify"
+    },
+    "OPTIONS /register": {
+      "controller": "cors",
+      "action": "options"
+    },
+    "POST /login": {
+      "controller": "login",
+      "action": "new"
+    },
+    "OPTIONS /login": {
+      "controller": "cors",
+      "action": "options"
+    },
+    "POST /logout": {
+      "controller": "logout",
+      "action": "new"
+    },
+    "OPTIONS /logout": {
+      "controller": "cors",
+      "action": "options"
+    },
+    "GET /cache": {
+      "controller": "cache",
+      "action": "index"
+    },
+    "GET /identities/:identity": {
+      "controller": "identities",
+      "action": "show"
+    },
+    "POST /identities/:identity/subscribe": {
+      "controller": "identities",
+      "action": "subscribe"
+    },
+    "POST /identities/:identity/unsubscribe": {
+      "controller": "identities",
+      "action": "unsubscribe"
+    },
+    "GET /identities/:identity/statements": {
+      "controller": "statements",
+      "action": "index"
+    },
+    "POST /refresh": {
+      "controller": "profile",
+      "action": "refresh"
+    },
+    "POST /refresh/:identity": {
+      "controller": "profile",
+      "action": "reload"
+    },
+    "GET /refresh": {
+      "controller": "profile",
+      "action": "refresh"
+    },
+    "GET /votes": {
+      "controller": "vote",
+      "action": "get"
+    },
+    "POST /statements/:statement/vote": {
+     "controller": "statements",
+      "action": "vote"
+    },
+    "POST /comments/:comment/vote": {
+     "controller": "comments",
+     "action": "vote"
+    },
+    "GET /statements/votes": {
+     "controller": "statements",
+      "action": "vote"
+    },
+    "GET /statements/:statement/opinions": {
+      "controller": "opinions",
+      "action": "show"
+    },
+    "PUT /opinions/:statement_id": {
+      "controller": "opinions",
+      "action": "addOpinions"
+    },
+    "POST /opinions/:statement": {
+      "controller": "opinions",
+      "action": "vote"
+    },
+    "DELETE /opinions/:statement": {
+      "controller": "opinions",
+      "action": "destroy"
+    },
+    "DELETE /opinions/:statement/comment/:comment": {
+      "controller": "opinions",
+      "action": "destroy"
+    },
+    "POST /statements/:statement/opinions/vote": {
+      "controller": "opinions",
+      "action": "vote"
+    },
+    "GET /statements/:identity": {
+      "controller": "statements",
+      "action": "index"
+    },
+    "POST /identity/:identity_id/statement": {
+      "controller": "statements",
+      "action": "create"
+    },
+    "PUT /statements/:identity_id/:statement_id": {
+      "controller": "statements",
+      "action": "update"
+    },
+    "PUT /statements/:statement_id/opinions": {
+      "controller": "opinions",
+      "action": "addOpinions"
+    },
+    "POST /statements/:statement_id/comment": {
+      "controller": "comments",
+      "action": "new"
+    },
+    "GET /statements/:identity/:statement": {
+      "controller": "comments",
+      "action": "index"
+    },
+    "GET /opinions/comments": {
+      "controller": "opinions",
+      "action": "getOpinionComments"
+    },
+    "GET /profile/:identity": {
+      "controller": "profile",
+      "action": "show"
+    },
+    "POST /identity/:identity/avatar": {
+      "controller": "uploader",
+      "action": "avatar"
+    },
+    "POST /avatar": {
+      "controller": "uploader",
+      "action": "avatar"
+    }
+  }
+}

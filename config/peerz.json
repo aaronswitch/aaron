@@ -1,0 +1,10 @@
+{
+  "host": "127.0.0.1",
+  "port": 9876,
+  "prefix": "",
+  "static": {
+    "url": "http://127.0.0.1"
+  },
+  "path": "app/peers/",
+  "routes": "../../config/peer_routes.json"
+}

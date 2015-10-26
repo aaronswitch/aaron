@@ -1,0 +1,55 @@
+  <form id="avatar_form" enctype="multipart/form-data" action="/avatar/{{&key}}" method="POST" style="display: none;">
+    <input id="avatar_form_file" type="file" name="file" />
+    <input type="submit" value="Upload">
+
+    <script>
+      $(document).ready(function() {
+        //$('#avatar_form').ajaxForm();
+        var key = $('body').data('key');
+
+        if(!key) {
+          return;
+        }
+
+          $('#avatar_form').unbind()
+
+          $('#avatar_form').submit(function(e){
+            e.preventDefault();
+            Wait();
+
+            $(this).ajaxSubmit({
+              success: function() {
+                var rnd = '?' + Math.random(),
+                    img = $('#avatar_img');
+                $('#avatar_img').attr('src', $(img).attr('src') + rnd);
+                Wait(-1);
+              }
+            })
+            return false;
+          })
+
+          $('#avatar_form_file').change(function(e) {
+            e.preventDefault();
+            $('#avatar_form').submit();
+            return false;
+          })
+
+          $('#avatar_img').click(function(e){
+            e.preventDefault();
+
+            if(window.User && (key == window.User.key)) {
+              $("#avatar_form_file").trigger('click');
+            }
+
+            return false;
+
+          //if($('#self').attr('data-identity') == "{{&key}}") {
+            $("#avatar_form_file").trigger('click');
+          /*} else {
+            toggleNotes('#identity');
+          }*/
+          })
+      })
+    </script>
+  </form>
+

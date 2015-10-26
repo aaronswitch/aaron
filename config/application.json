@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "uid": "",
+  "gid": "",
+  "debug": 0,
+  "exportAs": "Aaron",
+  "env": {
+    "UV_THREADPOOL_SIZE": 20
+  },
+  "components": {
+    "i18n/i18n-2": {
+      "type": "i18n",
+      "on": true,
+      "version": "0.1"
+    },
+    "session/seance": {
+      "type": "session",
+      "on": true,
+      "version": "0.1"
+    },
+    "models/knex": {
+      "type": "relation",
+      "on": true,
+      "version": "0.1",
+      "opts": {}
+    },
+    "views/mustache": {
+      "type": "template",
+      "on": true,
+      "version": "0.1",
+      "opts": {"dialect": "fumanchu"}
+    },
+    "controllers/restify": {
+      "type": "REST",
+      "on": true,
+      "version": "0.1",
+      "opts": {"path": "./app/peers", "conf": "../../config/rest.json", "routes": "./config/routes.json", "dialect": "fumanchu"}
+    },
+    "nosql/redis": {
+      "type": "woot?",
+      "on": true,
+      "version": "0.1"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{ 
+  "redis": {
+    "vote": {
+      "on": true,
+      "port": 6379,
+      "host": "127.0.0.1",
+      "password": "heslo",
+      "db": 1,
+      "options": {}
+    }, "store": {
+      "on": true,
+      "port": 6379,
+      "host": "127.0.0.1",
+      "password": "heslo",
+      "db": 2,
+      "options": {}
+    }, "account": {
+      "on": true,
+      "port": 6379,
+      "host": "127.0.0.1",
+      "password": "heslo",
+      "db": 3,
+      "options": {}
+    }, "dump": {
+      "on": true,
+      "port": 6379,
+      "host": "127.0.0.1",
+      "password": "heslo",
+      "db": 4,
+      "options": {}
+    }
+  }
+}

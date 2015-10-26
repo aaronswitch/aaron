@@ -1,0 +1,8 @@
+{
+  "allow": false,
+  "invite": {
+    "allow": true,
+    "ttl": 3600
+  },
+  "verify": "https://www.localhost/verify/"
+}

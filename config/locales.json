@@ -1,0 +1,6 @@
+{
+  "on": true,
+  "directory": "config/locales",
+  "extension": ".json",
+  "locales": ["en", "hr"]
+}

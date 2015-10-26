@@ -1,0 +1,16 @@
+{
+  "routes": {
+    "GET /": {
+      "controller": "userz",
+      "action": "show"
+    },
+    "POST /:id": {
+      "controller": "userz",
+      "action": "show"
+    },
+    "GET /users/:key": {
+      "controller": "userz",
+      "action": "show"
+    }
+  }
+}

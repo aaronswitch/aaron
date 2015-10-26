@@ -1,0 +1,13 @@
+{
+  "adapter": "postgres",
+  "database": "test",
+  "username": "test",
+  "password": "test",
+  "encoding": "unicode",
+  "host": "127.0.0.1",
+  "port": 5432,
+  "timestamps": true,
+  "underscored": true,
+  "pool": {"maxConnections": 5, "maxIdleTime": 30},
+  "storage": "/data/aaron/aaron/db/database.sqlite"
+}

@@ -1,0 +1,19 @@
+{
+  "adapter": "postgres",
+  "database": "test",
+  "username": "edem",
+  "password": "edem",
+  "encoding": "unicode",
+  "host": "127.0.0.1",
+  "port": 5432,
+  "timestamps": true,
+  "underscored": true,
+  "pool": {"maxConnections": 5, "maxIdleTime": 30},
+  "client": "pg",
+  "connection": {
+    "host": "127.0.0.1",
+    "user": "edem",
+    "password": "edem",
+    "database": "test"
+  }
+}

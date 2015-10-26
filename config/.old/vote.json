@@ -1,0 +1,7 @@
+{
+  "client": 2,
+  "systems": {
+    "upvote": "upvote",
+    "opinion": "choice"
+  }
+}

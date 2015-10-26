@@ -1,0 +1,55 @@
+{
+  "alias_database": "../config/aliases.js",
+  "mydestination": ["lab.demokracija.hr", "demokracija.hr"],
+  "mydomain": "demokracija.hr",
+  "myorigin": ["peer.demokracija.hr","lab.demokracija.hr","www.demokracija.hr"],
+  "myhostname": "lab.demokracija.hr",
+  "mynetworks": [],
+  "smtp_transport": "nodemailer-smtp-transport",
+  "smtp_transport_opts": {
+    "host": "localhost",
+    "port": 25
+  },
+  "skel": "./public/skel",
+  "resetpassword": 100000,
+  "storage": {
+    "public": {
+      "backend": "sql"
+    },
+    "private": {
+      "backend": "redis"
+    }
+  },
+  "queues": {
+    "incoming": {
+      "dump": "redis",
+      "spool": "./db/spool/",
+      "wake": 5
+    },
+    "message": {
+      "dump": "redis",
+      "spool": "./public/s/",
+      "wake": 5
+    },
+    "passwd": {
+      "dump": "redis",
+      "wake": 5
+    },
+    "generator": {
+      "dump": "redis",
+      "wake": 5,
+      "import": {
+        "messages": {
+        }
+      }
+    }
+  },
+  "generator": {
+    "identity": {
+      "delivery": "./public/i/"
+    },
+    "message": {
+      "delivery": "./public/"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>mua.header}}
+</head>
+
+<body>
+  <div>
+    <form onsubmit="return passwordReset(this);" data-token="{{&data.token}}">
+      Potvrdi email <input id="email" style="display: inline;" type="text" name="name" maxlength="20" />
+      Password1 <input id="pwd1" style="display: inline;" type="password" name="pwd1" maxlength="12" />
+      Password2 <input id="pwd2" style="display: inline;" type="password" name="pwd2" maxlength="12" />
+      <button type="submit">Reset</button>
+    </form>
+</body>
+</html>

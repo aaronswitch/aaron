@@ -1,0 +1,11 @@
+{{^quiet}}
+  <script type="text/javascript">
+    $('#notice .close').off();
+    $('#notice .close').on('click', function(e) {
+      $(this).parents().find('#top').hide();
+    });
+  </script>
+{{/quiet}}
+
+<span>{{#message}}{{>notice.message}}{{/message}}</span>
+<div href="#" class="navbar-text close">X</div>

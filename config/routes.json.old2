@@ -1,0 +1,72 @@
+{
+  "routes": {
+    "POST /register": {
+      "controller": "register",
+      "action": "new"
+    },
+    "POST /invite/:id": {
+      "controller": "identities",
+      "action": "invite"
+    },
+    "POST /login": {
+      "controller": "login",
+      "action": "new"
+    },
+    "POST /logout": {
+      "controller": "logout",
+      "action": "new"
+    },
+    "GET /refresh": {
+      "controller": "profile",
+      "action": "refresh"
+    },
+    "POST /refresh/:identity": {
+      "controller": "profile",
+      "action": "reload"
+    },
+    "GET /votes": {
+      "controller": "vote",
+      "action": "get"
+    },
+    "POST /votes/:message": {
+      "controller": "vote",
+      "action": "upvote"
+    },
+    "GET /identities/:id/activity": {
+      "controller": "identities",
+      "action": "show"
+    },
+    "PUT /identities/:identity": {
+      "controller": "identities",
+      "action": "update"
+    },
+    "DELETE /identities/:identity": {
+      "controller": "identities",
+      "action": "destroy"
+    },
+    "POST /identities/:identity/avatar": {
+      "controller": "identities",
+      "action": "avatar"
+    },
+    "GET /identities/:identity/messages": {
+      "controller": "messages",
+      "action": "index"
+    },
+    "POST /identities/:To/message": {
+      "controller": "messages",
+      "action": "create"
+    },
+    "GET /messages/:message": {
+      "controller": "messages",
+      "action": "show"
+    },
+    "POST /messages/:message/vote": {
+      "controller": "messages",
+      "action": "vote"
+    },
+    "PUT /messages/:message_id": {
+      "controller": "messages",
+      "action": "update"
+    }
+  }
+}

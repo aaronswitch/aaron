@@ -1,0 +1,15 @@
+{
+  "on": true,
+  "sid": "aid",
+  "storage": {
+    "type": "redis",
+    "host": "127.0.0.1",
+    "port": 6379,
+    "db": "0"
+  },
+  "secret": "12345678901234567890123456789012",
+  "expiration": 60,
+  "sessionCreationAttempts": 1000,
+  "path": "/",
+  "domain": false
+}

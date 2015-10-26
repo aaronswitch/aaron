@@ -1,0 +1,10 @@
+{
+  "host": "127.0.0.1",
+  "port": 8080,
+  "prefix": "",
+  "static": {
+    "url": "https://lab.demokracija.hr"
+  },
+  "content-formatters": "./config/formatters.js",
+  "routes": "../../config/routes.json"
+}

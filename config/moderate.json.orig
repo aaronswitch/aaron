@@ -1,0 +1,10 @@
+{
+  "resource": {
+    "/index.html": {
+      "q": "identity",
+      "msg": {
+        "identity": 1
+      }
+    }
+  }
+}

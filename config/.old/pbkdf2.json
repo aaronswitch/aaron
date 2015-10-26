@@ -1,0 +1,6 @@
+{
+  "prefix": "pbkdf2",
+  "saltLen": 24,
+  "iterations": 1000,
+  "encoding": "base64"
+}

@@ -1,0 +1,17 @@
+{{@incoming}}
+  <div class="row message">
+    <div class="mheader">From: {{From}} &bull; {{&Date}}</div>
+    <div class="content">{{&Content}}</div>
+
+    <!--div class="msg_info"><a href="#" onclick="return Compose($(this).parent());"><i class="fa fa-reply-all"></i></a-->
+    <div class="msg_info">
+      <a href="#" onclick="return toggleElement($(this).siblings('.incoming_messages'));"><i class="fa fa-eye"></i></a>
+      <a href="#" onclick="return bounceMessage('{{&Message-Id}}');"><i class="fa fa-share"></i></a>
+
+      <table class="incoming_messages" style="display: none;">
+        <tr><th>Header</th><th>Value</th></tr>
+        {{@.}}<tr><td>{{?}}</td><td>{{.}}</td></tr>{{/.}}
+      </table> 
+    </div>
+  </div>
+{{/incoming}}

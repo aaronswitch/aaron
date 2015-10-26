@@ -1,0 +1,8 @@
+{
+  "allow": true,
+  "invite": {
+    "allow": true,
+    "ttl": 3600
+  },
+  "verify": "https://lab.demokracija.hr/verify/"
+}

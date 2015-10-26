@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="mheader">
+    <img class="avatar" src="https://lab.demokracija.hr/i/{{From}}/avatars/avatar.png" />
+
+    From: {{From}},
+    To: {{To}},
+    Date: {{Date}}
+    {{>votes}}
+  </div>
+
+  <div class="section">
+    <p>{{Body}}</p>
+  </div>
+
+  <div class="msg_footer">+-487 votes{{#Area}} in <span class="area">{{Area}}</span>{{/Area}}, 5 children, ...</div>
+  <div class="children"></div>
+</div>

@@ -1,0 +1,41 @@
+{
+  "test": {
+    "proto": "http",
+    "http": {
+      "server": "127.0.0.1",
+      "port": 8081
+    },
+    "https": {
+      "server": "",
+      "port": 8081,
+      "certificate": "",
+      "key": ""
+    }
+  },
+  "production": {
+    "proto": "http",
+    "http": {
+      "server": "",
+      "port": 8081
+    },
+    "https": {
+      "server": "",
+      "port": 8081,
+      "certificate": "",
+      "key": ""
+    }
+  },
+  "development": {
+    "proto": "http",
+    "http": {
+      "server": "",
+      "port": 8081
+    },
+    "https": {
+      "server": "",
+      "port": 8081,
+      "certificate": "",
+      "key": ""
+    }
+  }
+}

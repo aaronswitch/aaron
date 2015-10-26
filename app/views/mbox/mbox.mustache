@@ -1,0 +1,16 @@
+<div id="mbox_header" class="info" onclick="return toggleElement('#mbox_ops');">Inbox - .., .., ..</div>
+
+<div id="mbox_ops" style="display: none;">
+  <a href="#" class="public_messages" onclick="return closePrivateMessages();"><i class="fa fa-anchor"></i></a>
+  <a href="#" class="private_messages" onclick="return loadPrivateMessages({{#User}}'{{&key}}'{{/User}});"><i class="fa fa-folder-open-o"></i></a>
+  <a href="#" class="incoming_messages" onclick="return loadIncomingMessages();"><i class="fa fa-envelope"></i></a>
+</div>
+
+<div id="priv_messages_anchor" style="display: none;"></div>
+<div id="incoming_messages_anchor" style="display: none;"></div>
+
+<div id="messages_anchor">
+  {{#messages}}
+    {{>mbox.message}}
+  {{/messages}}
+</siv>

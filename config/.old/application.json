@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "uid": "",
+  "gid": "",
+  "debug": 0,
+  "exportAs": "Aaron",
+  "components": {
+    "i18n/i18n-2": {
+      "type": "i18n",
+      "on": true,
+      "version": "0.1"
+    },
+    "session/seance": {
+      "type": "session",
+      "on": true,
+      "version": "0.1"
+    },
+    "models/sequelize": {
+      "type": "relation",
+      "on": true,
+      "version": "0.1"
+    },
+    "views/mustache": {
+      "type": "template",
+      "on": true,
+      "version": "0.1"
+    },
+    "controllers/restify": {
+      "type": "REST",
+      "on": true,
+      "version": "0.1"
+    },
+    "nosql/redis": {
+      "type": "woot?",
+      "on": true,
+      "version": "0.1"
+    },
+    "mailers/emailjs": {
+      "type": "mailer",
+      "on": true,
+      "version": "0.1"
+    }
+  }
+}

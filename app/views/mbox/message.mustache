@@ -1,0 +1,51 @@
+<div class="row message" id="{{&ident}}">
+  <div class="mheader">
+    {{#User}}
+      <a href="{{&url}}"><img class="avatar" src="{{&avatar}}" /></a>
+    {{/User}}
+    {{^User}}
+      <a href="#"><img class="avatar" src="" /></a>
+    {{/User}}
+
+    From: {{&From}} &bull; {{&Date}}
+    {{>votes}}
+  </div>
+
+  <div class="content">{{&Content}}</div>
+  <div class="msg_info">
+    <a href="#" onclick="return Compose($(this).parent());"><i class="fa fa-reply-all"></i></a>
+    <div class="invite-wrap">
+      <nav class="invite">
+        <ul class="clearfix-invite">
+          <li>
+            <a href="#"><i class="fa fa-share-square-o"></i></a>
+
+            <ul class="invite-menu">
+              <form onsubmit="return forwardMessage(this);" data-id="{{&Key}}">
+                <div style="white-space:nowrap">
+                  <label>Email</label> <input class="to_addr" type="text" maxlength="20" />
+                </div>
+
+                <div style="white-space:nowrap">
+                  <label>Message</label> <textarea class="invite_content" type="text" rows="4" cols="20"></textarea>
+                </div>
+
+                <input type="submit" name="submit" value="Send" />
+              </form>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <a href="#" onclick="return goTo('{{&Ref}}', '{{&ident}}');"><i class="fa fa-comments"></i></a>
+  </div>
+
+  <form class="reply_message" style="display: none;" onsubmit="return sendMessage(this);" data-id="{{&Key}}" data-ref="{{&Ref}}">
+    <textarea rows="4" class="form_submit statement_input"></textarea>
+    <button type="submit" class="btn btn-mini locale">Send</button>
+    <button type="buttom" class="btn btn-mini locale" onclick="return previewMessage(this);">Preview</button>
+    <div class="section preview" style="display: none;"></div>
+  </form>
+
+  <div class="children">{{#replies}}{{>mbox.message}}{{/replies}}</div>
+</div>

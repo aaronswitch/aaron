@@ -1,0 +1,26 @@
+{
+  "aaron": {
+    "on": true,
+    "type": "inet",
+    "service": "tcp:127.0.0.1:9999"
+  },
+  "aaron2": {
+    "on": false,
+    "type": "unix",
+    "service": "socket:/tmp/us"
+  },
+  "aaron3": {
+    "on": true,
+    "type": "inet",
+    "service": "tls:127.0.0.1:9998",
+    "key": "./ssl-cert-snakeoil.key",
+    "cert": "./ssl-cert-snakeoil.pem",
+    "rejectUnauthorized": false
+  },
+  "git0": {
+    "on": true,
+    "type": "git",
+    "service": "repo:file:///home/pope/123456789",
+    "spool": "./db/git/git0"
+  }
+}

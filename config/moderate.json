@@ -1,0 +1,17 @@
+{
+  "resource": {
+    "/index2.html": {
+      "q": "identity",
+      "msg": {
+        "identity": 1
+      }
+    }
+  }, "publish": {
+    "/index2.html": {
+      "q": "identity",
+      "msg": {
+        "identity": 1
+      }
+    }
+  }
+}

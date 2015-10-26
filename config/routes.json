@@ -1,0 +1,72 @@
+{
+  "routes": {
+    "GET /cache/:key/:ts": {
+      "controller": "cache",
+      "action": "show"
+    },
+    "GET /users/:key": {
+      "controller": "users",
+      "action": "show"
+    },
+    "GET /votes": {
+      "controller": "users",
+      "action": "votes"
+    },
+    "POST /users": {
+      "controller": "users",
+      "action": "create"
+    },
+    "PUT /users/:id": {
+      "controller": "users",
+      "action": "update"
+    },
+    "POST /reset/:email": {
+      "controller": "users",
+      "action": "reset"
+    },
+    "POST /users/passwd/:token": {
+      "controller": "users",
+      "action": "passwd"
+    },
+    "DELETE /users": {
+      "controller": "users",
+      "action": "destroy"
+    },
+    "POST /avatar/:key": {
+      "controller": "users",
+      "action": "avatar"
+    },
+    "POST /login": {
+      "controller": "users",
+      "action": "login"
+    },
+    "POST /logout": {
+      "controller": "users",
+      "action": "logout"
+    },
+    "GET /messages/:id": {
+      "controller": "messages",
+      "action": "show"
+    },
+    "GET /messages/:Key/private": {
+      "controller": "messages",
+      "action": "private"
+    },
+    "POST /messages": {
+      "controller": "messages",
+      "action": "create"
+    },
+    "POST /messages/:Key/forward": {
+      "controller": "messages",
+      "action": "forward"
+    },
+    "GET /messages/:id/votes": {
+      "controller": "messages",
+      "action": "votes"
+    },
+    "POST /messages/:id/vote": {
+      "controller": "messages",
+      "action": "vote"
+    }
+  }
+}

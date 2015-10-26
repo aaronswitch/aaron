@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>mua.header}}
+</head>
+<body data-ts="{{&ts}}" {{#User}}data-key="{{&key}}"{{/User}}>
+  <div id="notice_anchor" style="display: none;"><div id="notice">Hello world!</div><div onclick="return closeNotice();" class="close">x</div></div>
+
+  <div>
+    <form class="not-logged-in" onsubmit="return loginSubmit(this);" id="login_form">
+      E-mail <input id="email" style="display: inline;" type="text" name="email" maxlength="20" />
+      Password <input id="pwd" style="display: inline;" type="password" name="pwd" maxlength="12" />
+      <button type="submit">Login</button>
+      <button type="button" onclick="return resetPassword(this);">Reset</button>
+    </form>
+
+    <a href="#" id="self_link">
+      <img id="self_img" style="float: right;" width="48" height="48" class="logged-in" />
+    </a>
+
+    <div id="nav" class="loggin-required" style="display: inline;">
+      <div class="menu-wrap">
+        <nav class="menu">  
+          <ul class="clearfix">
+            <li>
+              <a class="not-logged-in" href="#">Join now <span class="arrow">&#9660;</span></a>
+
+              <ul class="sub-menu">
+              <form onsubmit="return registerSubmit(this);" id="register_form">
+                <div style="white-space:nowrap">
+                  <label>Username</label> <input id="register_user" type="text" maxlength="20" />
+                </div>
+
+                <div style="white-space:nowrap">
+                  <label>E-mail</label> <input id="register_email" type="text" maxlength="20" />
+                </div>
+
+                <div style="white-space:nowrap">
+                  <label>Display Name</label> <input id="register_display_name" type="text" maxlength="20" />
+                </div>
+
+                <div style="white-space:nowrap">
+                  <label>Password</label> <input id="register_pwd1" type="password" maxlength="12" />
+                </div>
+
+                <div style="white-space:nowrap">
+                  <label>Password</label> <input id="register_pwd2" type="password" maxlength="12" />
+                </div>
+                <input type="submit" name="submit" value="Ok" />
+              </form>
+              </ul> 
+            </li> 
+            <li><a href="#" class="logged-in" style="display: none;" onclick="return logoutSubmit();">Logout</a></li>
+          </ul>
+        </nav>
+      </div> 
+    </div> 
+  </div> 
+
+  {{#User}}
+  <div id="header" class="section">
+    <div id="totem">
+      <img id="avatar_img" src="{{&User.avatar}}" />
+      This is Sparta!
+      {{>mua.avatar}}
+    </div>
+  </div>
+
+  <div class="section">
+    <a href="#" onclick="$('#announcement_form').toggle(); return false">&#9998;</a>
+  </div>
+
+  <form onsubmit="return sendMessage(this);" id="announcement_form" style="display: none;">
+    <textarea class="statement_input" rows="4"></textarea>
+    <input class="whitelist" type="text" />
+    <input class="blacklist" type="text" />
+    <!--textarea class="statement_selects" rows="4"></textarea-->
+    <input class="to_addr" value="{{&key}}" type="hidden" />
+    <button type="submit">Send</button>
+    <button type="button" onclick="return previewMessage(this);">Preview</button>
+    <div class="section preview" style="display: none;"></div>
+  </form>
+  {{/User}}
+
+  <div id="statement_preview" class="section preview" style="display: none;"></div>
+  <div id="statement_opreview" class="section" style="display: none;"></div>
+
+  {{>mbox}}
+
+  <div id="footer">Copyright © W3Schools.co</div>
+</body>
+</html>

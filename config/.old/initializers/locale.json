@@ -1,0 +1,4 @@
+{
+  "load_path": "./public/locales",
+  "default_locale": "hr"
+}

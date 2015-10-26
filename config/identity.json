@@ -1,0 +1,7 @@
+{
+  "url_prefix": "i/",
+  "dest": "./public/i",
+  "copy": ["./public/skel/statute.html","./public/skel/identity.css"],
+  "templates": ["./public/skel/index.html", "./public/skel/program.html"],
+  "mkdir": ["avatars", "images"]
+}

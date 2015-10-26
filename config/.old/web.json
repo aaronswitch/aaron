@@ -1,0 +1,55 @@
+{
+  /*
+   * type can be "front" or "REST"
+   *   front - app is behind web proxy server
+   *   REST - app starts with own web server
+   */
+  "type": "front",
+  /*
+   * Static files
+   *
+   * For "front" type - /public files are server by proxy web server.
+   * Helpful commands (atm output a bit buggy):
+   *
+   *     nails g routes apache2
+   *     nails g routes nginx
+   *
+   * For "REST" type - node.js will also serve /public files
+   */
+  "restify": {
+    "plugins": [
+      "acceptParser",
+      "authorizationParser",
+      "dateParser",
+      "queryParser"
+    ],
+    "modules": [
+      "restify-plugin-json-body-parser",
+      "restify-plugin-query"
+    ]
+  },
+  "static": {
+    "doc_root": "public",
+    "dir_path": "public",
+    "vhost": "*:80",
+    "port": "",
+    "protocol": "http://",
+    "secure": "https://",
+    "server_name": "lab.demokracija.hr",
+    "url_path": "/aaron/",
+    "errlog": "error.log",
+    "accesslog": "access.log"
+  },
+  /*
+   * node.js http config
+   */
+  "REST": {
+    "server": "localhost",
+    "protocol": "http://",
+    "port": 8080,
+    "pass": {
+      "/echo": true,
+      "/ping": true
+    }
+  }
+}

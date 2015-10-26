@@ -1,0 +1,40 @@
+{ 
+  "redis": {
+    "session": {
+      "on": true,
+      "port": 6379,
+      "host": "127.0.0.1",
+      "password": "heslo",
+      "db": 1,
+      "options": {}
+    }, "cache": {
+      "on": true,
+      "port": 6379,
+      "host": "127.0.0.1",
+      "password": "heslo",
+      "db": 4,
+      "options": {}
+    }, "vote": {
+      "on": true,
+      "port": 6379,
+      "host": "127.0.0.1",
+      "password": "heslo",
+      "db": 4,
+      "options": {}
+    }, "statements": {
+      "on": true,
+      "port": 6379,
+      "host": "127.0.0.1",
+      "password": "heslo",
+      "db": 4,
+      "options": {}
+    }, "verify": {
+      "on": true,
+      "port": 6379,
+      "host": "127.0.0.1",
+      "password": "heslo",
+      "db": 3,
+      "options": {}
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "server": {
+    "on": true,
+    "host": "127.0.0.1",
+    "port": 9999,
+    "skel": "./public/i/skel/",
+    "root": "./public",
+    "idir": "./public/i/",
+    "areas": {
+      "file": "./config/areas.json",
+      "reload":30
+    },
+    "frontpage": {
+      "file": "index.html",
+      "refresh": 60,
+      "identity": 1
+    },
+    "queues": {
+      "identity": {
+        "refresh": 10,
+        "type": "list"
+      },
+      "resetpassword": {
+        "refresh": 10,
+        "timeout": 900
+      }
+    }
+  }, "client": {
+    "on": true,
+    "host": "127.0.0.1",
+    "port": 9999,
+    "reconnect": 5
+  }
+}

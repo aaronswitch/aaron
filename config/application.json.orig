@@ -1,0 +1,128 @@
+{
+  "version": "0.1",
+  "uid": "",
+  "gid": "",
+  "debug": 0,
+  "components": {
+    "conventions": {
+      "rails": {
+        "type": "rails naming convention",
+        "on": true,
+        "version": "0.1"
+      }
+    },
+    "core": {
+      "fork": {
+        "type": "proc",
+        "on": true,
+        "version": "0.1"
+      },
+      "spawn": {
+        "type": "proc",
+        "on": true,
+        "version": "0.1"
+      },
+      "log": {
+        "type": "log",
+        "on": true,
+        "version": "0.1"
+      },
+      "deploy": {
+        "type": "deployment",
+        "on": false,
+        "version": "0.1"
+      },
+      "rng": {
+        "type": "random",
+        "on": true,
+        "version": "0.1"
+      },
+      "cpu": {
+        "type": "something",
+        "on": false,
+        "version": "0.1"
+      }
+    },
+    "i18n": {
+      "i18n-2": {
+        "type": "i18n",
+        "on": true,
+        "version": "0.1"
+      }
+    },
+    "session": {
+      "seance": {
+        "type": "session",
+        "on": true,
+        "version": "0.1"
+      }
+    },
+    "models": {
+      "sequelize": {
+        "type": "relation",
+        "on": true,
+        "version": "0.1"
+      },
+      "git": {
+        "type": "",
+        "on": false,
+        "version": "0.1"
+      }
+    },
+    "views": {
+      "mustache": {
+        "type": "template",
+        "on": true,
+        "version": "0.1"
+      }
+    },
+    "controllers": {
+      "loader": {
+        "type": "",
+        "on": true,
+        "version": "0.1"
+      },
+      "restify": {
+        "type": "REST",
+        "on": true,
+        "version": "0.1"
+      },
+      "etherpad": {
+        "type": "etherpad",
+        "on": false,
+        "version": "0.1"
+      },
+      "socket.io": {
+        "type": "socket",
+        "on": false,
+        "version": "0.1"
+      }
+    },
+    "nosql": {
+      "redis": {
+        "type": "woot?",
+        "on": true,
+        "version": "0.1"
+      }
+    },
+    "mailers": {
+      "emailjs": {
+        "type": "mail",
+        "on": true,
+        "version": "0.1"
+      }
+    },
+    "generators": {
+      "controller": {
+        "type": "",
+        "on": false,
+        "version": "0.1"
+      },
+      "generate": {
+        "type": "generator",
+        "on": false,
+        "version": "0.1"
+      }
+    }
+  }
+}
