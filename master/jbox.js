@@ -29,6 +29,10 @@ function JSON2JBox(data) {
 }
 
 function JBox2JSON(str) {
+  if(!str) {
+    return [];
+  }
+
   buf = new Buffer(str);
   buf[0] = OBracket;
 
