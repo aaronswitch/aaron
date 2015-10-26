@@ -60,8 +60,8 @@ function passwordGenerator(attrs, callback) {
 }
 
 function userAdd(attrs, callback) {
-  attrs.type = attrs.type || 'u';
-  var avatar = ['/', attrs.type, attrs.name, 'avatar.png'].join('/').replace(/\/+/g, '/');
+  attrs.category = attrs.category || 'u';
+  var avatar = ['/', attrs.category, attrs.name, 'avatar.png'].join('/').replace(/\/+/g, '/');
   attrs.avatar = attrs.avatar || (urlPrefix + avatar);
 
   console.log('user add:'+JSON.stringify(attrs));
@@ -102,7 +102,7 @@ function userAdd(attrs, callback) {
           //return next();
         }
 
-        helper.cpDir(Conf.skel, './public/' + users[0].type + '/' + users[0].name, function(cerr) {
+        helper.cpDir(Conf.skel, './public/' + users[0].category + '/' + users[0].name, function(cerr) {
           if(cerr) {
             console.log('cp skel err: ' + './public/' + u[0].name);
           }
