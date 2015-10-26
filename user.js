@@ -60,6 +60,8 @@ function passwordGenerator(attrs, callback) {
 }
 
 function userAdd(attrs, callback) {
+  attrs.category = attrs.category || '';
+
   var avatar = ['/', attrs.category, attrs.name, 'avatar.png'].join('/').replace(/\/+/g, '/');
   attrs.avatar = attrs.avatar || (urlPrefix + avatar);
 
@@ -100,6 +102,8 @@ function userAdd(attrs, callback) {
           //res.send(403, {});
           //return next();
         }
+
+        users[0].category = users[0].category || [];
 
         helper.cpDir(Conf.skel, './public/' + users[0].category + '/' + users[0].name, function(cerr) {
           if(cerr) {
