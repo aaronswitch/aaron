@@ -60,7 +60,6 @@ function passwordGenerator(attrs, callback) {
 }
 
 function userAdd(attrs, callback) {
-  attrs.category = attrs.category || 'u';
   var avatar = ['/', attrs.category, attrs.name, 'avatar.png'].join('/').replace(/\/+/g, '/');
   attrs.avatar = attrs.avatar || (urlPrefix + avatar);
 
