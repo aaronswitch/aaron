@@ -13,8 +13,8 @@ var Mail = require('./lib/mail.js');
 var Aliases = require('./config/aliases.js');
 var nodegit = require('nodegit');
 
-var root = '/home/pope';
-//var root = process.env.HOME;
+//var root = '/home/peer';
+var root = process.env.HOME;
 
 function findMessageID(msg) {
   for(var key in msg) {
