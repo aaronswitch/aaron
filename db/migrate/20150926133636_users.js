@@ -13,7 +13,7 @@ exports.up = function(Knex, Promise) {
     t.string('avatar').notNull();
     t.string('agenda').notNull().defaultTo('');
 
-    t.unique(['type', 'name']);
+    t.unique(['category', 'name']);
   });  
 };
 
