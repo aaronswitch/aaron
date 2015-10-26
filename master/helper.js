@@ -80,7 +80,7 @@ function cpDir(src, dst, callback) {
           if(fstat.isDirectory()) {
             console.log('directory' + from);
 
-            copyDir(from, to, function() {
+            cpDir(from, to, function() {
               console.log('copyDir done:'+filenum);
               if(!--filenum) {
                 callback();
