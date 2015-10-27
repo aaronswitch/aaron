@@ -13,7 +13,7 @@ module.exports = function() {
       console.log('AUTH KNEX:'+JSON.stringify(result));
       var passport = {user: result[0]};
 
-      if(!passport.user) {
+      if(!passport.user || !passport.user.password) {
         callback(403);
         return;
       }
