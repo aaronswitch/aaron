@@ -1,7 +1,7 @@
 var submission = require('../../lib/submission.js');
 var url = require('../../config/rest.json').static.url;
 
-function createCacheEntries(params, callback) {
+function createStateEntries(params, callback) {
   console.log('create cache entries:'+Object.keys(params.submission));
   console.log('create cache data:'+JSON.stringify(params.data));
 
@@ -62,10 +62,10 @@ function createCacheEntries(params, callback) {
 }
 
 module.exports = function() {
-  this.exportAs = 'CacheController';
+  this.exportAs = 'BeaconController';
 
   this.show = function(req, res, next) {
-    console.log('CACHE SHOW:'+JSON.stringify(req.params));
+    console.log('BEACON SHOW:'+JSON.stringify(req.params));
     var key = req.params.key,
         ts = parseInt(req.params.ts);
 
@@ -87,12 +87,12 @@ module.exports = function() {
   }
 
   this.create = function(params, callback) {
-    console.log('CACHE message:'+Object.keys(params));
+    console.log('Beacon message:'+Object.keys(params));
     var sub = params.submission;
     console.log('PARENT:'+JSON.stringify(sub.meta.parent));
 
-    createCacheEntries(params, function(err, entries) {
-     console.log('after create Cache Entries:'+err);
+    createStateEntries(params, function(err, entries) {
+     console.log('after create State Entries:'+err);
      callback(err, entries);
     })
   }
