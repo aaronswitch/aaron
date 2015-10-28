@@ -1,7 +1,6 @@
-var conf = require('./config/cache.json').client;
-
-if(!conf.on) {
-  process.exit(0);
+var conf = {
+  host: "127.0.0.1",
+  port: 9999,
 }
 
 if(process.argv.length < 5) {
