@@ -213,6 +213,12 @@ function loginSubmit(form) {
   var email = trimVal('#email'),
       pwd = trimVal('#pwd');
 
+  if(!email || !pwd) {
+    var notice = Views.notice({message: 'Enter credentials'});
+    $('#notice').html(notice);
+    return false;
+  }
+
   Routes.users.login({
     email: email,
     password: pwd
@@ -227,13 +233,9 @@ function loginSubmit(form) {
     window.User = response.user;
 
     var rnd = '?' + Math.random();
-    $('#self_img').attr('src', response.user.avatar + rnd);
+    //$('#self_img').attr('src', response.user.avatar + rnd);
+    $('#self_img').attr('src', response.user.avatar);
     $('#self_link').attr('href', '/' + response.user.category + '/' + response.user.name);
-    /*var i = $('#self').attr('data-identity');
-
-    if(i != response.identity.id) {
-      delete window.Votes;
-    }*/
 
     loginNotRequired();
     getVoteCache(setVotes);
@@ -255,8 +257,7 @@ function logoutSetup() {
   removeVotes();
   selfRequired({hide: true});
   delete window.User;
-  delete window.Roles;
-  // delete window.Session;
+  delete window.Session;
 }
 
 function logoutSubmit() {
@@ -309,8 +310,8 @@ function passwordReset(elem) {
     if(status) {
       var notice = Views.notice(response);
       $('#notice').html(notice);
-      return false;
     }
+    return false;
   })
   return false;
 }
@@ -346,11 +347,17 @@ function registerSubmit(form) {
       return false;
     }
 
+    window.Session = sessCheck();
+    window.User = response.user;
+
     if(window.User.key != response.user.key) {
       delete window.Votes;
     }
 
     Wait(2, function() {
+      var rnd = '?' + Math.random();
+      $('#self_img').attr('src', response.user.avatar + rnd);
+      $('#self_link').attr('href', '/' + response.user.category + '/' + response.user.name);
       loginNotRequired();
       selfRequired();
     })
@@ -502,57 +509,6 @@ function goTo(ref, comment) {
   return false;
 }
 
-function closePrivateMessages() {
-  $('#priv_messages_anchor').hide();
-  $('#incoming_messages_anchor').hide();
-  $('#messages_anchor').show();
-  return false;
-}
-
-function loadPrivateMessages(key) {
-  if($('#priv_messages_anchor').is(':visible')) {
-    $('#priv_messages_anchor').hide();
-    return false;
-  }
-
-  Routes.messages.private({Key: key}, function(status, response) {
-    if(status) {
-      var notice = Views.notice(response);
-      $('#notice').html(notice);
-      return false;
-    }
-    $('#priv_messages_anchor').show();
-    return false;
-  })
-
-  return false;
-}
-
-function loadIncomingMessages() {
-  if($('#incoming_messages_anchor').is(':visible')) {
-    $('#incoming_messages_anchor').hide();
-    return false;
-  }
-
-  Routes.messages.private({Key: '123456789'}, function(status, response) {
-    if(status) {
-      var notice = Views.notice(response);
-      $('#notice').html(notice);
-      return false;
-    }
-    for(var i in response) {
-      response[i] = JSON.parse(response[i]);
-    }
-
-    var out = Views.mbox.incoming({incoming: response});
-    $('#incoming_messages_anchor').html(out);
-    $('#incoming_messages_anchor').show();
-    return false;
-  })
-
-  return false;
-}
-
 function refreshSession(callback) {
   var session = $.cookie('aid');
 
@@ -570,7 +526,8 @@ function refreshSession(callback) {
       }
 
       var rnd = '?' + Math.random();
-      $('#self_img').attr('src', data.avatar + rnd);
+      //$('#self_img').attr('src', data.avatar + rnd);
+      $('#self_img').attr('src', data.avatar);
       $('#self_link').attr('href', '/' + data.category + '/' + data.name);
       // $('#self_link').attr('href');
 
@@ -609,26 +566,22 @@ function checkUpdates() {
       })
     }
 
-    var key = trimVal($('#announcement_form').find('.to_addr')),
-        ts = $('body').attr('data-ts');
-
-    if(!key || !ts) {
+    if(!Box || !Beacon) {
       return;
     }
 
-    Routes.cache.show({key: key, ts: ts}, function(status, data) {
+    Routes.beacon.show({key: Box, ts: Beacon}, function(status, data) {
       if(!status) {
         for(var i = 0; i < data.length; i = i + 2) {
           var item = JSON.parse(data[i]),
               out = Views.mbox.message(item),
               msgTs = parseInt(data[i + 1]);
 
-          if(msgTs <= ts) {
+          if(msgTs <= Beacon) {
             continue;
           }
 
-          ts = msgTs;
-          $('body').attr('data-ts', ts);
+          Beacon = msgTs;
 
           var e = $(out),
               form = $(e).children('form'),
@@ -683,8 +636,8 @@ $(document).ready(function() {
       defaultLocale: 'hr',
     },
     routes: {
-      "GET /cache/:key/:ts": {
-        controller: "cache",
+      "GET /beacon/:key/:ts": {
+        controller: "beacon",
         action: "show",
       },
       "POST /users": {
@@ -727,10 +680,6 @@ $(document).ready(function() {
       "GET /messages/:id": {
         controller: "messages",
         action: "show"
-      },
-      "GET /messages/:Key/private": {
-        controller: "messages",
-        action: "private"
       },
       "POST /messages": {
         controller: "messages",
