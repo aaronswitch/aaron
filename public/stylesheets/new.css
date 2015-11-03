@@ -9,8 +9,18 @@ body {
   font-family: 'Libre Baskerville', serif;
   font-weight: 400;
   line-height: 1.45;
+  //background: #fefefe;
+  background: #fcfcfc;
   color: #333;
+  padding: 0;
 }
+
+.content {
+  padding: 36px;
+}
+
+#logo { top: 0; position: relative; }
+#logo img { width: 100%; }
 
 p {margin-bottom: 1.3em;}
 
@@ -33,17 +43,56 @@ h4 {font-size: 1.125em;}
 
 small, .font_small {font-size: 0.889em;}
 
+figure { width: 17%; display: inline-block; padding: 1%; text-align: center; }
+figure img { width: 99%; }
+figure img:hover { background: #ffffbb; }
+figaction { text-align: center; }
+
+#wait { display: none; position: absolute; left: 50%; top: 50%; z-index: 101;}
 .clearfix:after { display:block; clear:both; }
 .right { float: right; }
 a { text-decoration: none; }
-.row { display: block; min-width: 100%; }
+.row { display: block; }
+.row h1,.row h2,.row h3,.row h4 { padding: 15px; }
+
+.tip {
+  display: inline;
+  position: relative;
+}
+
+.tip:hover:after{
+    border: 1px solid #ccc;
+    background: white;
+    color: #333;
+    border-radius: 5px;
+    bottom: 26px;
+    content: attr(data-tip);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    // width: 220px;
+    box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+}
+
+.tip:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    // left: 50%;
+    position: absolute;
+    z-index: 99;
+}
 
 #notice_anchor {
   z-index:1000;
   position: fixed;
   height: auto;
+  min-height: 48px;
   text-align: center;
-  background: white;
+  //background: white;
   top: 0;
   right: 0;
   left: 0;
@@ -52,14 +101,16 @@ a { text-decoration: none; }
   margin-left: 7.2px;
   padding: 6.525px 23.4px;
   //border-radius: 3.6px 3.6px 3.6px 3.6px;
-  border: 1px solid #aaa;
+  //border: 1px solid #aaa;
+  background: linear-gradient(#fefefe, #fafafa);
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
 
 #notice {display: inline-block;}
-#notice_anchor .close {display: inline-block;float: right;}
+#notice_anchor .close {display: inline-block;float: right;cursor: pointer;}
 
 .preview { border: 1px dotted #ddd; }
-.content * { font-family: 'Enriqueta', sans-serif; }
 .content p { margin-bottom: 24px; }
 .children { margin-left: 32px; }
 .vote_pair { font-size: 14px; }
@@ -71,8 +122,9 @@ a { text-decoration: none; }
 }
 
 .votable:hover { cursor: url(pencil.cur), progress !important; }
-.message { border-left: 1px dotted #ddd; background: #f9f9f9; }
-.content { padding-left: 44px; border-right: 1px dotted #ccc; }
+.message { border-left: 1px dotted #ddd; background: #fff; }
+.msg_content { padding-left: 44px; border-right: 1px dotted #ccc; }
+.msg_content * { font-family: 'Enriqueta', sans-serif; }
 
 blockquote {
   border-left: 4px solid #bbb;
@@ -88,7 +140,7 @@ blockquote {
   padding: 0;
   margin: 0;
   width: 100%;
-  background: #fbfbfb;
+  background: #ffffff;
 }
 
 #totem {
@@ -102,12 +154,15 @@ blockquote {
 
 #self_img {
   border-radius: 7px;
+  margin-right: 36px;
 }
 
 #avatar_img {
   border-radius: 7px;
   float: left;
   margin-right: 15px;
+  height:100%;
+  width:128px;
 }
 
 #login_form { float: right; top: 0; }
@@ -143,7 +198,7 @@ blockquote {
   background-color: white;
 }
 
-#footer, .info {
+#footer, .info, .info a {
   background-color:#373737;
   color:white;
   clear:both; 
@@ -172,7 +227,16 @@ blockquote {
   //color: #2D3E4F;
 }
 
-.mheader, .msg_info {
+footer {
+  margin-top: 5px;
+}
+
+.statement {
+  background-color: #fff;
+  padding: 44px;
+}
+
+footer, footer *, .mheader, .msg_info {
   line-height:32px;
   color: #2D3E4F;
   padding:10px;
