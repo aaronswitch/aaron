@@ -1,0 +1,17 @@
+  <div class="section">
+    <a href="#" onclick="$('#announcement_form').toggle(); return false">&#9998;</a>
+  </div>
+
+  <form onsubmit="return sendMessage(this);" id="announcement_form" style="display: none;">
+    <textarea class="statement_input" rows="4"></textarea>
+    <input class="whitelist" type="text" />
+    <input class="blacklist" type="text" />
+    <!--textarea class="statement_selects" rows="4"></textarea-->
+    <input class="to_addr" value="{{&key}}" type="hidden" />
+    <button type="submit">Ok</button>
+    <button type="button" onclick="return previewMessage(this);">Preview</button>
+    <div class="section preview" style="display: none;"></div>
+  </form>
+
+  <div id="statement_preview" class="section preview" style="display: none;"></div>
+  <div id="statement_opreview" class="section" style="display: none;"></div>

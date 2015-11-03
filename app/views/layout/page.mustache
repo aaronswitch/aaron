@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>layout.include}}
+
+  <script type="text/javascript">var Box = "{{&key}}", Beacon = "{{&ts}}";</script>
+</head>
+<body>
+  {{>layout.header}}
+
+  {{#User}}
+    <div class="content">
+      <div id="header" class="section">
+        {{>layout.totem}}
+      </div>
+      {{>layout.announce}}
+    </div>
+  {{/User}}
+
+  <div class="content">
+    {{>mbox}}
+    <div id="footer">@demokracija.hr</div>
+  </div>
+</body>
+</html>
