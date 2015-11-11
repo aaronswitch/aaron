@@ -29,7 +29,7 @@ function setCors(res) {
 }
 
 module.exports = function() {
-  this.exportAs = 'Cors';
+  this.exportAs = 'CorsController';
 
   this.set = function(res) {
     setCors( res);
